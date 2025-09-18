@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+     <div class="container-box">
+        <form action="#">
+          <h2>Bem-vindo(a) de volta!</h2>
+          <br></br>
+          <p>
+            Faça sua conta e facilite o processo das suas doações em poucos
+            passos
+          </p>
+          <br></br>
+
+          <input
+            type="text"
+            id="user"
+            name="user"
+            placeholder="Nome de usuário"></input>
+          <input
+            id="password"
+            name="password"
+            placeholder="Senha"
+          ></input>
+
+          <a class="forgot" href=".">
+            Esqueci a senha
+          </a>
+
+          <input class="submit" type="submit" value="Logar"></input>
+
+          <div class="divider">
+            <span>ou continue com</span>
+          </div>
+
+          <div class="social-login">
+            <button type="button">
+              <i class="fab fa-google"></i>
+            </button>
+            <button type="button">
+              <i class="fab fa-apple"></i>
+            </button>
+            <button type="button">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </div>
+          <br></br>
+          <p>
+            Ainda não tem uma conta?
+            <Link to="/cadastro" class="linkCadastro">
+              Criar Conta
+            </Link>
+          </p>
+          <p>
+              VOLTAR À TELA INICIAL
+          </p>
+        </form>
+      </div>
+</body>
+</html>

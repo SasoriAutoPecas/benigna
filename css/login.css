@@ -1,0 +1,108 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ocupa toda a altura da tela */
+  width: 100%;
+  background: #a8ba88;
+  font-family: Arial, sans-serif;
+}
+
+.container-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.container-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.forgot {
+  display: block;
+  float: right;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #5f713f;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.forgot:hover {
+  color: #ff1a75;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: #28a745; /* verde */
+}
+
+.submit {
+  width: 100%;
+  background: #5f713f;
+  color: white;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.submit:hover {
+  background: #218838;
+}
+
+.linkCadastro {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linkCadastro:hover {
+  text-decoration: underline;
+}
+.back {
+  text-decoration: none;
+  color: #e4080a;
+}
