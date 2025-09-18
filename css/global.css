@@ -1,0 +1,49 @@
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+/* DEFINIÇÃO DE VARIÁVEIS GLOBAIS (ROOT)
+  Esta é uma prática fundamental em projetos escaláveis. 
+  Centralizamos as cores e fontes aqui, facilitando a manutenção. 
+  Se precisarmos mudar o tom de verde do projeto, mudamos em um só lugar.
+*/
+:root {
+  /* Paleta de Cores */
+  --color-primary: #5F713F; /* Verde principal para botões e elementos de destaque */
+  --color-secondary: #A8BA88; /* Verde mais claro para fundos e painéis */
+  --color-accent: #FB8F72; /* Laranja/coral para ícones sociais e pontos de atenção */
+  --color-background: #FFFFFF; /* Fundo principal dos formulários */
+  --color-wave: #E65D44; /* Cor da onda decorativa */
+  
+  /* Cores de Texto */
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  --text-gray: #555555;
+  --text-placeholder: #888888;
+
+  /* Tipografia */
+  --font-heading: 'Playfair Display', serif; /* Fonte serifada para títulos, como no design */
+  --font-body: 'Poppins', sans-serif; /* Fonte sem serifa para o corpo do texto */
+
+  /* Outras Variáveis */
+  --border-radius-input: 30px;
+  --border-radius-button: 25px;
+  --box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* Reset básico para garantir consistência entre navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-secondary);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
