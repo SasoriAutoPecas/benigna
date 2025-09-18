@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benigna | Autenticação</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- CSS Global e da Página -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <div class="container" id="container">
+            <!-- Formulário de Cadastro (Sign Up) -->
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Seja Bem Vindo!</h1>
+                    <p class="subtitle">Faça sua conta e facilite o processo das suas doações em poucos passos</p>
+                    
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social"><i class="fab fa-apple"></i></a>
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <span>ou continue com</span>
+                    
+                    <input type="text" placeholder="Nome de usuário" />
+                    <input type="email" placeholder="Email" />
+                    <div class="password-field">
+                        <input type="password" placeholder="Senha" />
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <button class="btn-primary">Criar conta</button>
+                </form>
+            </div>
+
+            <!-- Formulário de Login (Sign In) -->
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Bem vindo de volta!</h1>
+                    <p class="subtitle">Acesse sua conta novamente e volte a sentir seu coração quentinho!</p>
+                    
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social"><i class="fab fa-apple"></i></a>
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <span>ou continue com</span>
+
+                    <input type="text" placeholder="Nome de usuário" />
+                    <div class="password-field">
+                        <input type="password" placeholder="Senha" />
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <a href="#" class="forgot-password">Esqueci a senha</a>
+                    <button class="btn-primary">Entrar</button>
+                </form>
+            </div>
+
+            <!-- Camada de Overlay com a Animação -->
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Já tem uma conta?</h1>
+                        <p>Para se manter conectado conosco, faça o login com suas informações</p>
+                        <button class="ghost" id="signIn">Faça Login</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Ainda não tem conta?</h1>
+                        <p>Crie sua conta e comece a jornada de doações conosco</p>
+                        <button class="ghost" id="signUp">Criar conta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Onda Decorativa -->
+        <div class="wave"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
