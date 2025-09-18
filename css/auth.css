@@ -1,0 +1,280 @@
+/*
+  ESTRUTURA PRINCIPAL E COMPONENTES DA PÁGINA
+  Aqui usamos a metodologia BEM (Block, Element, Modifier) de forma implícita.
+  .container -> Bloco principal
+  .form-container -> Elemento do Bloco
+  .sign-in-container -> Modificador do Elemento
+*/
+
+.auth-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Garante que a onda não cause scroll */
+}
+
+.container {
+  background-color: var(--color-background);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden; /* Essencial para a animação de slide funcionar */
+  width: 768px;
+  max-width: 100%;
+  min-height: 520px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 2.2em;
+}
+
+p.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+  color: var(--text-gray);
+  max-width: 80%;
+  text-align: center;
+}
+
+span {
+  font-size: 12px;
+  color: var(--text-gray);
+  margin: 15px 0;
+}
+
+a {
+  color: var(--text-gray);
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+button {
+  border-radius: var(--border-radius-button);
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: var(--text-light);
+}
+
+form {
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: var(--border-radius-input);
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Lógica da Animação - Movimento dos painéis */
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: var(--color-primary);
+  background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: var(--text-light);
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel h1 {
+    color: var(--text-light);
+}
+.overlay-panel p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 10px 0;
+}
+
+.social-container a {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+  color: var(--text-dark);
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+}
+
+/* Onda decorativa no rodapé */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; 
+    background-color: var(--color-wave);
+    z-index: -1;
+    --mask:
+        radial-gradient(134.16px at 50% -53.50px,#000 99%,#0000 101%) calc(50% - 120px) 0/240px 100%,
+        radial-gradient(134.16px at 50% 187.50px,#0000 99%,#000 101%) 50% 120px/240px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
